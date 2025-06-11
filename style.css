@@ -1,0 +1,86 @@
+@charset "UTF-8";
+
+@keyframes beat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    transition: background-color 1.5s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+div#entrada {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+div#entrada > h2.orientacao{
+    font-family: 'Comfortaa', sans-serif;
+    color: red;
+}
+
+div#entrada > img.heart {
+    display: block;
+    cursor: pointer;
+    animation-name: beat;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-play-state: running;
+} 
+
+main#carta {
+    display: none;
+    max-width: 450px;
+    background-color: white;
+    height: 90vh;
+    border-radius: 8px;
+    box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.527);
+}
+
+main#carta > h1 {
+    font-family: 'Cinzel', serif;
+    font-size: 50px;
+    font-weight: 300;
+    margin: 20px 0px -10px 30px;
+}
+
+main#carta > p {
+    font-family: 'Comfortaa', sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    margin: 25px;
+    line-height: 30px;
+    text-align: justify;
+    text-indent: 20px;
+    
+}
+
+footer > p {
+    font-family: 'Comfortaa', sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    margin: 0px 0px 0px 30px;
+    line-height: 25px;
+    text-align: justify;
+    text-indent: 0;
+}
