@@ -26,8 +26,7 @@
         
     </section>
     <img src="coracao.png" alt="coracao2" id="heart2">
-        
-    
+    <audio id="musica" src="musica.mp3"></audio>
     
     
     <script>
@@ -35,8 +34,11 @@
             entrada.style.display = 'none'
             fundo.style.backgroundColor = 'rgb(236, 140, 172)'
             carta.classList.toggle('show');
+            const musica = document.getElementById('musica');
+            musica.volume = 0.1;
+            musica.play();
         }
     </script>
-
+    
 </body>
 </html>

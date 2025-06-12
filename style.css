@@ -28,7 +28,7 @@
 }
 body {
     font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-    transition: background-color 1.5s ease;
+    transition: background-color 3s ease;
     position: relative;
     overflow: hidden;
 }
