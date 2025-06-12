@@ -11,6 +11,16 @@
 
 
 
+
+@keyframes beat2 {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.2);
+  }
+}
+
 * {
     margin: 0px;
     padding: 0px;
@@ -18,9 +28,12 @@
 }
 body {
     font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    transition: background-color 1.5s ease;
+    position: relative;
+    overflow: hidden;
 }
 
-menu#entrada {
+div#entrada {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -28,13 +41,14 @@ menu#entrada {
     flex-direction: column;
 }
 
-menu#entrada > h2.orientacao{
+div#entrada > h2.orientacao{
     font-family: 'Comfortaa', sans-serif;
     color: red;
 }
 
-div.heart > img {
+div#entrada > img.heart {
     width: 80px;
+    display: block;
     cursor: pointer;
     animation-name: beat;
     animation-duration: 2s;
@@ -42,20 +56,12 @@ div.heart > img {
     animation-iteration-count: infinite;
 } 
 
-main#fundo {
-    transition: background-color 1.5s ease;
-    position: relative;
-    overflow: hidden;
-    height: 100vh;
-    
-}
-
 
 #carta {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex-flow: column;
 
     position: fixed;
     top: 50%;
@@ -64,9 +70,8 @@ main#fundo {
     transition: transform 1s ease, opacity 1s ease;
 
     width: 90%;
-    max-width: 400px;
-    
-    
+    max-width: 450px;
+    height: 50px;  
     padding: 20px 30px;
 
     transition: height 4s ease, opacity 1s ease;
@@ -86,7 +91,7 @@ main#fundo {
     transform: translate(-50%, -50%) scale(1);
     opacity: 1;
     pointer-events: auto;
-    height: 85vh;  
+    height: 90vh;  
     
 }
 
@@ -94,55 +99,41 @@ main#fundo {
     font-family: 'Cinzel', serif;
     font-size: 50px;
     font-weight: 300;
-    margin: 5px 0px 5px 0px;
+    margin: 10px 0px 10px 0px;
     align-self: flex-start; 
     text-indent: 0px;
 }
 
-#carta > p.texto {
+#carta > p {
     font-family: 'Comfortaa', sans-serif;
     font-optical-sizing: auto;
     font-weight: 700;
     font-style: normal;
     margin: 0px 0px 25px 0px ;
-    line-height: 27px;
+    line-height: 30px;
     text-align: justify;
-    text-indent: 25px;
-    font-size: 16px;
+    text-indent: 20px;
     
 }
 
-#carta > p.ass {
-  font-family: 'Comfortaa', sans-serif;
-  font-weight: 700;
-  margin: 0; 
-  align-self: flex-start; 
-  text-indent: 0px;
-  font-size: 16px;
-}
 
+img#heart2 {
+    pointer-events: none;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    opacity: 0;
+    z-index: 10;
+    display: block;
 
-
-div#heart2 {
-
-  pointer-events: none;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transition: top 4s ease;
-  transform: translate(-50%, -50%);
-  width: auto;
-  height: auto;
-  opacity: 0;
-  z-index: 10;
-}
-
-div#heart2 > img {
-    animation: beat 2s ease-in-out infinite;   
-    width: 80px; 
+    animation: beat2 2s ease-in-out infinite;
+    transition: top 4s ease;
+    
 }
 
 #carta.show ~ #heart2 {
-    top: calc(50% + 42vh); /* desce junto com a carta crescendo */
+    top: calc(50% + 45vh); /* desce junto com a carta crescendo */
     opacity: 1;
 }
