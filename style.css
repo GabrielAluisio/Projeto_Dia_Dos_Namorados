@@ -17,10 +17,8 @@
 body {
     font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
     transition: background-color 1.5s ease;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    position: relative;
+    overflow: hidden;
 }
 
 div#entrada {
@@ -37,32 +35,66 @@ div#entrada > h2.orientacao{
 }
 
 div#entrada > img.heart {
+    width: 80px;
     display: block;
     cursor: pointer;
     animation-name: beat;
     animation-duration: 2s;
     animation-timing-function: ease-in-out;
     animation-iteration-count: infinite;
-    animation-play-state: running;
 } 
 
-main#carta {
-    display: none;
-    max-width: 450px;
-    background-color: white;
-    height: 90vh;
-    border-radius: 8px;
-    box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.527);
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-main#carta > h1 {
+#carta {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 1s ease, opacity 1s ease;
+
+    width: 90%;
+    max-width: 450px;
+    height: 50px;  
+
+    transition: height 4s ease, opacity 1s ease;
+    opacity: 0;
+    overflow: hidden;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.527);
+
+    z-index: 10;
+
+}
+    
+
+#carta.show {
+
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+    pointer-events: auto;
+    height: 90vh;  
+    
+}
+
+#carta > h1 {
     font-family: 'Cinzel', serif;
     font-size: 50px;
     font-weight: 300;
     margin: 20px 0px -10px 30px;
 }
 
-main#carta > p {
+#carta > p {
     font-family: 'Comfortaa', sans-serif;
     font-optical-sizing: auto;
     font-weight: 700;
@@ -74,13 +106,34 @@ main#carta > p {
     
 }
 
-footer > p {
+p#ass {
     font-family: 'Comfortaa', sans-serif;
     font-optical-sizing: auto;
     font-weight: 700;
     font-style: normal;
-    margin: 0px 0px 0px 30px;
+    margin: 0px 0px 0px 0px;
     line-height: 25px;
     text-align: justify;
     text-indent: 0;
+}
+
+img#heart2 {
+    position: fixed;
+    left: 44%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    
+    width: 80px;
+    opacity: 0;
+    z-index: 11;
+
+    animation: beat 2s ease-in-out infinite;
+    transition: top 4.2s ease;
+    
+}
+
+#carta.show ~ #heart2 {
+    top: calc(50% + 39vh); /* desce junto com a carta crescendo */
+    opacity: 1;
+    cursor: pointer;
 }

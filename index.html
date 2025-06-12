@@ -15,22 +15,25 @@
         <h2 class="orientacao">Click no coração!</h2>
         <img src="coracao.png" alt="coração" class="heart" onclick="clickCoracao()">
     </div>
-    <main id="carta">
-        <h1>MEU AMOR,</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus iste, facere qui placeat quae explicabo nesciunt similique, eligendi recusandae sunt tempora. Hic perferendis dignissimos ullam magnam repellendus, quia aliquid nesciunt?</p>
-
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad odio molestias voluptate dolores et reiciendis incidunt distinctio voluptatum excepturi nobis iusto libero exercitationem eum earum cumque, quibusdam voluptatibus eius quam? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magni, voluptatum, eveniet illo. </p>
-        <footer>
-            <p>Te amo</p>
-            <p>Ass: Seu amor</p>
-        </footer>
+    <main>
+        <section id="carta">
+            <h1>MEU AMOR,</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus iste, facere qui placeat quae explicabo nesciunt similique, eligendi recusandae sunt tempora. Hic perferendis dignissimos ullam magnam repellendus, quia aliquid nesciunt?</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad odio molestias voluptate dolores et reiciendis incidunt distinctio voluptatum excepturi nobis iusto libero exercitationem eum earum cumque, quibusdam voluptatibus eius quam? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magni, voluptatum, eveniet illo. </p>
+            
+            <p id="ass">Te amo <br>Ass: Seu amor</p>
+            
+        </section>
+        <img src="coracao.png" alt="coracao2" id="heart2">
+        
     </main>
+    
     
     <script>
         function clickCoracao() {
-            carta.style.display = 'block'
             entrada.style.display = 'none'
             fundo.style.backgroundColor = 'rgb(236, 140, 172)'
+            carta.classList.toggle('show');
         }
     </script>
 
