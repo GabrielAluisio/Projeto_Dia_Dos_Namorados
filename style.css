@@ -91,7 +91,7 @@ div#entrada > img.heart {
     transform: translate(-50%, -50%) scale(1);
     opacity: 1;
     pointer-events: auto;
-    height: 90vh;  
+    height: 85vh;  
     
 }
 
@@ -99,21 +99,33 @@ div#entrada > img.heart {
     font-family: 'Cinzel', serif;
     font-size: 50px;
     font-weight: 300;
-    margin: 10px 0px 10px 0px;
+    margin: 5px 0px 5px 0px;
     align-self: flex-start; 
     text-indent: 0px;
 }
 
-#carta > p {
+#carta > p.texto {
     font-family: 'Comfortaa', sans-serif;
     font-optical-sizing: auto;
     font-weight: 700;
     font-style: normal;
     margin: 0px 0px 25px 0px ;
-    line-height: 30px;
+    line-height: 25px;
     text-align: justify;
     text-indent: 20px;
+    font-size: 1em;
     
+}
+
+p.ass {
+  font-family: 'Comfortaa', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+
+  margin: 0; 
+  align-self: flex-start; 
+  text-indent: 0px;
 }
 
 
@@ -134,6 +146,6 @@ img#heart2 {
 }
 
 #carta.show ~ #heart2 {
-    top: calc(50% + 45vh); /* desce junto com a carta crescendo */
+    top: calc(50% + 43vh); /* desce junto com a carta crescendo */
     opacity: 1;
 }
