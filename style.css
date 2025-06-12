@@ -9,128 +9,140 @@
   }
 }
 
-@keyframes beat2 {
-  0%, 100% {
-    transform: translate(-50%, -50%) scale(1);
-  }
-  50% {
-    transform: translate(-50%, -50%) scale(1.2);
-  }
-}
+
 
 * {
-  margin: 0px;
-  padding: 0px;
-  box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
 }
 body {
-  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
 }
 
 menu#entrada {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
 }
 
 menu#entrada > h2.orientacao{
-  font-family: 'Comfortaa', sans-serif;
-  color: red;
+    font-family: 'Comfortaa', sans-serif;
+    color: red;
 }
 
 div.heart > img {
-  width: 80px;
-  cursor: pointer;
-  animation-name: beat;
-  animation-duration: 2s;
-  animation-timing-function: ease-in-out;
-  animation-iteration-count: infinite;
+    width: 80px;
+    cursor: pointer;
+    animation-name: beat;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
 } 
 
-main {
-  transition: background-color 1.5s ease;
-  position: relative;
-  overflow: hidden;
-  height: 100vh;
-
+main#fundo {
+    transition: background-color 1.5s ease;
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+    
 }
 
 
 #carta {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
 
-  transform: translate(-50%, -50%) scale(0);
-  transition: transform 1s ease, opacity 1s ease;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 1s ease, opacity 1s ease;
 
-  width: 90%;
-  max-width: 450px;
-  height: 50px;  
-  padding: 20px 30px;
-  overflow: hidden;
-  transition: height 4s ease, opacity 1s ease;
-  opacity: 0;
-  background-color: white;
-  border-radius: 8px;
-  box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.527);
+    width: 90%;
+    max-width: 400px;
+    
+    
+    padding: 20px 30px;
 
-  z-index: 10;
+    transition: height 4s ease, opacity 1s ease;
+    opacity: 0;
+    overflow: hidden;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.527);
+
+    z-index: 10;
 
 }
     
 
 #carta.show {
 
-  transform: translate(-50%, -50%) scale(1);
-  opacity: 1;
-  pointer-events: auto;
-  height: 90vh;  
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+    pointer-events: auto;
+    height: 85vh;  
     
 }
 
 #carta > h1 {
-  font-family: 'Cinzel', serif;
-  font-size: 50px;
-  font-weight: 300;
-  margin: 10px 0px 10px 0px;
+    font-family: 'Cinzel', serif;
+    font-size: 50px;
+    font-weight: 300;
+    margin: 5px 0px 5px 0px;
+    align-self: flex-start; 
+    text-indent: 0px;
+}
+
+#carta > p.texto {
+    font-family: 'Comfortaa', sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    margin: 0px 0px 25px 0px ;
+    line-height: 27px;
+    text-align: justify;
+    text-indent: 25px;
+    font-size: 16px;
+    
+}
+
+#carta > p.ass {
+  font-family: 'Comfortaa', sans-serif;
+  font-weight: 700;
+  margin: 0; 
   align-self: flex-start; 
   text-indent: 0px;
-}
-
-#carta > p {
-  font-family: 'Comfortaa', sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 700;
-  font-style: normal;
-  margin: 0px 0px 25px 0px ;
-  line-height: 30px;
-  text-align: justify;
-  text-indent: 20px;
-    
+  font-size: 16px;
 }
 
 
-img#heart2 {
+
+div#heart2 {
+
   pointer-events: none;
-  position: fixed;
+  position: absolute;
   left: 50%;
   top: 50%;
+  transition: top 4s ease;
   transform: translate(-50%, -50%);
-  width: 80px;
+  width: auto;
+  height: auto;
   opacity: 0;
   z-index: 10;
-  display: block;
+}
 
-  animation: beat2 2s ease-in-out infinite;
-  transition: top 4s ease;
-    
+div#heart2 > img {
+    animation: beat 2s ease-in-out infinite;   
+    width: 80px; 
 }
 
 #carta.show ~ #heart2 {
-  top: calc(50% + 45vh); /* desce junto com a carta crescendo */
-  opacity: 1;
+    top: calc(50% + 42vh); /* desce junto com a carta crescendo */
+    opacity: 1;
 }
